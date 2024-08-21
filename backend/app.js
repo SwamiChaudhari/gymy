@@ -4,6 +4,13 @@ import cors from "cors";
 import { sendEmail } from "./utils/sendEmail.js";
 
 const app = express();
+app.use(cors(
+  {
+    origin: ["https://gymy-six.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true
+  }
+));
 const router = express.Router();
 
 config({ path: "./config.env" });
